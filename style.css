@@ -3,18 +3,13 @@
 /**************/
 *,
 *::after,
-*::before,
-*:visited {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style-type: none;
+*::before {
+	box-sizing: border-box;
 }
 
 button,
 summary {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 
@@ -25,9 +20,9 @@ summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-  /* startje */
-  --color-text: #111;
-  --color-background: #eee;
+	/* startje */
+	--color-text: #111;
+	--color-background: #eee;
 }
 
 
@@ -41,16 +36,205 @@ summary {
 /* jouw code */
 
 body {
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before,
+*:visited {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+button,
+summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text: #111;
+	--color-background: #eee;
+}
+
+body {
+width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+
+main>section:nth-of-type(1)>img:nth-of-type(1) {
+	width: 100%;
+	padding-bottom: 2em;
+}
+
+main>section:nth-of-type(1) {
+	text-align: center;
+	width: 100%;
+	padding-bottom: 2em;
+}
+
+main>section:nth-of-type(2)>article {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto
+}
+
+main>section>article>p {
+	width: auto;
+	text-align: center;
+	padding-bottom: 1.5em;
+}
+
+main>section>article>h2 {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	text-align: center;
+}
+
+main>section:nth-of-type(3) {
+	text-align: center;
+	padding-bottom: 2em;
+}
+
+main>section:nth-of-type(4) {
+	text-align: center;
+	padding-bottom: 2em;
+}
+
+main>section:nth-of-type(5)>img:first-of-type {
+width: 100%;
+}
+
+main>section:nth-of-type(5)>p:first-of-type {
+	text-align: center;
+	padding: 1em;
+}
+
+main>section:nth-of-type(6) {
+	text-align: center;
+	padding: 0 0 2em 0;
+}
+
+main>section:nth-of-type(7) {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+main>section:nth-of-type(7) > article> img {
+	background-color: hotpink;
+	width: 100%;
+}
+
+main>section:nth-of-type(7)>article {
+	align-content: center;
+	width: 100%;
+	padding-bottom: 2em;
+}
+
+
+main>section:nth-of-type(7)>article>button {
+	margin-top: .8em;
+	margin-bottom: .8em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border-color: white;
+	width: 100%;
+	color: white;
+	background-color: darkgrey;
+}
+
+main>section:nth-of-type(8) {
+	text-align: center;
+	padding: 0 0 2em 0;
+}
+
+body>main>section:nth-of-type(9)>img:first-of-type {
+	position: relative;
+	width: 100%;
+}
+
+body>main>section:nth-of-type(9)>p:first-of-type {
+	text-align: center;
+	padding: 1em 0 1em 0;
+}
+
+body>main>section:nth-of-type(10)>h2:first-of-type {
+	position: absolute;
+	font-weight: 700;
+	margin-top: -7em;
+	margin-left: 7em;
+	width: 100%;
+}
+
+body>main>section:nth-of-type(11) {
+	text-align: center;
+}
+
+body>main>section:nth-of-type(12) {
+	text-align: center;
+	padding-top: 1em;
+}
+
+body>main>section:nth-of-type(12)>h2:first-of-type {
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+body>main>section:nth-of-type(13)> img:first-of-type{
+width: 100%;
+}
+
+body>main>section:nth-of-type(13)>h2:first-of-type {
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+body>main>section:nth-of-type(13)>p:first-of-type {
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/* jouw code */
+
+/* body {
   color: var(--color-text);
   background-color: var(--color-background);
-}
+/* }
 
 header {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-  height: 70px;
   margin-bottom: 2.5em;
 }
 
@@ -75,15 +259,26 @@ header>section:first-of-type>a:nth-of-type(1) {
 }
 
 /* winkelmand top */
-header>section:first-of-type>a:nth-of-type(1):hover {
+/* header>section:first-of-type>a:nth-of-type(1):hover {
   background: grey;
 }
 
+header nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
 header nav ul {
+  position: relative;
   display: flex;
   gap: 5em;
   justify-content: center;
   background-color: none;
+}
+
+header nav > img:first-of-type{
+  max-width: 300px;
 }
 
 header nav ul li {
@@ -100,7 +295,7 @@ header nav ul li a:hover+header nav ul li ul {
 }
 
 /* tweede section */
-main section:first-of-type {
+/* main section:first-of-type {
   width: 970px;
   margin-right: auto;
   margin-left: auto;
@@ -108,6 +303,7 @@ main section:first-of-type {
   padding-right: 15px;
   text-align: center;
   padding-bottom: 3em;
+  padding-top: 5em;
 }
 
 main>section>h1:first-of-type(1) {
@@ -270,7 +466,7 @@ main>section:nth-of-type(10)>img:first-of-type {
 main>section:nth-of-type(10)>h2:first-of-type {
   position: absolute;
   margin-top: -10em;
-  margin-left: 40em;
+  margin-left: 35em;
 }
 
 main>section:nth-of-type(10)>p:first-of-type {
@@ -310,4 +506,4 @@ main>section:nth-of-type(13)>img:nth-of-type(1) {
 main>section:nth-of-type(13)>p:nth-of-type(1) {
   text-align: center;
   padding-bottom: 1em;
-}
+} */
