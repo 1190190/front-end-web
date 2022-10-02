@@ -1,39 +1,881 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-button, summary {
+button,
+summary {
 	cursor: pointer;
 }
 
 
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
+/* kleur declaratie */
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-nav: #D3D3D3;
+	--color-decoratie-lijnen: #D3D3D3;
+	--color-background-button: #D3D3D3;
+	--color-text-link: #D3D3D3;
+	--color-background: white;
+	--color-text-topbar: white;
+	--color-background-logo: white;
+	--color-background-navbar: black;
+	--color-text: black;
+	--color-text-nav: black;
+	--color-text-footer: black;
+	--color-text-button: black;
+}
+
+/* dark&light mode declaratie */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text: white;
+		--color-background: black;
+		font-family: 'Cutive Mono', monospace;
+	}
+}
+
+/* alle benodigde elementen een font geven */
+body,
+button,
+select {
+	font-family: 'Cutive Mono', monospace;
+}
+
+/* linkjes blauwe kleur  */
+*,
+*::after,
+*::before,
+*:visited {
+	text-decoration: none;
+}
+
+button,
+summary {
+	cursor: pointer;
+}
+
+/* h1/h2 styling */
+h1,
+h2 {
+	color: var(--color-text);
+	font-family: 'Bebas Neue', 'cursive';
 }
 
 
 
 
 
-/****************/
-/* JOUW STYLING */
-/****************/
 
-/* jouw code */
 
-body {
-  color:var(--color-text);
-  background-color:var(--color-background);
+
+/* START WEBSITE */
+/* topbar (zwarte balk jouw winkelmand) */
+body>section:first-of-type {
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	position: sticky;
+	padding-top: 5px;
+	justify-content: center;
+	padding-bottom: 5px;
+	color: var(--color-text-topbar);
+	background-color: var(--color-background-navbar);
 }
 
+body>section:first-of-type>img:nth-of-type(1) {
+	width: 15px;
+	height: 15px;
+	background-color: var(--color-background-navbar);
+}
+
+
+
+/* header styling foto logo */
+header {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: var(--color-background);
+}
+
+header>a>img:first-of-type {
+	width: 100%;
+	padding-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 1em;
+	background-color: var(--color-background-logo);
+}
+
+
+/* humburger menu DICHT */
+nav>section:first-of-type {
+	display: flex;
+	font-size: 20px;
+	padding-top: .5em;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: .5em;
+	color: var(--color-text-nav);
+	justify-content: space-between;
+	background-color: var(--color-nav);
+}
+
+nav>section:first-of-type>p:first-of-type {
+	padding-top: .2em;
+	color: var(--color-text-nav);
+}
+
+/* decoratie burger menu button */
+nav>section:first-of-type>button:first-of-type {
+	border: none;
+	background-color: var(--color-nav);
+}
+
+nav>section:first-of-type>button:focus-visible {
+	transition: 1s;
+	transform: scale(200%);
+}
+
+nav>section:nth-of-type(2),
+section:nth-of-type(2)>ul>li>a {
+	height: 0;
+	transition: .3s;
+	overflow: hidden;
+}
+
+/* hamburger menu open */
+nav.toon-menu>section:nth-of-type(2) {
+	height: 200px;
+}
+
+ul {
+	gap: 1rem;
+	padding: 10px;
+	display: flex;
+	font-size: 18px;
+	list-style-type: none;
+	flex-direction: column;
+	color: var(--color-text-nav);
+	background-color: var(--color-nav);
+}
+
+/* open menu de selectie li's */
+.toon-menu ul>li>a:visited {
+	padding: 10px;
+	color: var(--color-text-nav);
+}
+
+
+
+
+
+
+/* Home pagina begint hier!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* afmetingen op de main content */
+.home Main {
+	width: 100%;
+	padding-top: 2em;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+
+
+/* section 1 (eerste foto) */
+.home main>section:nth-of-type(1)>img:nth-of-type(1) {
+	width: 100%;
+	padding-bottom: 2em;
+}
+
+.home main>section:nth-of-type(1) {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 2em;
+}
+
+
+
+/* section 2 (tweede foto/atricle)*/
+.home main>section:nth-of-type(2)>article {
+	width: 100%;
+	border: none;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	flex-direction: column;
+}
+
+.home main>section:nth-of-type(2)>article>p {
+	width: auto;
+	text-align: center;
+	padding-bottom: 1.5em;
+}
+
+.home main>section>article>h2 {
+	padding-bottom: .5em;
+	padding-top: .5em;
+	text-align: center;
+}
+
+
+
+/* section 3 (P waarom sojakaarsen)*/
+.home main>section:nth-of-type(3) {
+	text-align: center;
+	padding-bottom: 2em;
+}
+
+
+
+/* section 4 (P Tangerina?) */
+.home main>section:nth-of-type(4) {
+	text-align: center;
+	padding-bottom: 2em;
+}
+
+
+
+/* section 5 eerste foto na eerste article (P bekijk Tangerina?)*/
+.home main>section:nth-of-type(5)>img:first-of-type {
+	width: 100%;
+}
+
+.home main>section:nth-of-type(5)>p:first-of-type {
+	padding: 1em;
+	text-align: center;
+}
+
+
+
+/* section 6 (P Geurkaarsen als cadeau?)*/
+.home main>section:nth-of-type(6) {
+	text-align: center;
+	padding: 0 0 2em 0;
+}
+
+
+
+/* section 7 (tweede article) */
+.home main>section:nth-of-type(7) {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.home main>section:nth-of-type(7)>article>img {
+	width: 100%;
+}
+
+.home main>section:nth-of-type(7)>article>p:nth-of-type(1) {
+	width: auto;
+	text-align: center;
+	margin-bottom: .5em;
+	color: var(--color-text);
+}
+
+.home main>section:nth-of-type(7)>article>p:nth-of-type(2) {
+	width: auto;
+	font-size: 20px;
+	margin-bottom: .5em;
+	text-align: center;
+}
+
+.home main>section:nth-of-type(7)>article>button {
+	width: 100%;
+	border: none;
+	font-size: 16px;
+	padding-top: 8px;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-bottom: 8px;
+	color: var(--color-text-button);
+	background-color: var(--color-background-button);
+}
+
+.home main>section:nth-of-type(7)>article {
+	width: 100%;
+	margin-bottom: 2em;
+	align-content: center;
+	border: var(--color-decoratie-lijnen) .5px solid;
+}
+
+
+
+/* section 8 (P Bekijk alle kaarsen*/
+.home main>section:nth-of-type(8) {
+	gap: 1em;
+	display: flex;
+	text-align: center;
+	padding: 0 0 2em 0;
+	flex-direction: column;
+}
+
+
+
+
+
+/* section 9 (P bekijk de collectie + IMG) */
+.home main>section:nth-of-type(9)>img:first-of-type {
+	max-width: 100%;
+}
+
+.home main>section:nth-of-type(9)>p:first-of-type {
+	padding-top: 1em;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.home main>section:nth-of-type(9)>h2:nth-of-type(1) {
+	margin-left: 7em;
+	margin-top: -5.5em;
+	position: inline-block;
+}
+
+
+
+/* section 10 (h2 handgemaakte kaarsen)*/
+.home main>section:nth-of-type(10) {
+	margin-left: 20px;
+	padding-top: 120px;
+	text-align: center;
+}
+
+.home main>section:nth-of-type(10)h2:nth-of-type(1) {
+	margin-bottom: .5em;
+}
+
+
+
+/* section 11 (P lees hier meer over ons) */
+.home main>section:nth-of-type(11) {
+	text-align: center;
+}
+
+.home main>section:nth-of-type(11)>h2:first-of-type {
+	padding-top: 1em;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.home main>section:nth-of-type(11)>p:first-of-type {
+	padding-top: 1em;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+
+
+/* section 12 (IMG foto socials banner) */
+.home main>section:nth-of-type(12) {
+	padding-top: 1em;
+	text-align: center;
+}
+
+.home main>section:nth-of-type(12)>img {
+	width: 100%;
+}
+
+.home main>section:nth-of-type(12)>h1:first-of-type {
+	padding-top: 1em;
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+.home main>section:nth-of-type(12)>p:first-of-type {
+	padding-top: 1em;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+/* Product pagina begint hier!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.product-pagina main {
+	width: 100%;
+	padding-top: 2em;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+/* Terug naar houtcollectie */
+/*  sectition 1 */
+.product-pagina main>section:first-of-type {
+	display: flex;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	justify-content: flex-end;
+}
+
+.product-pagina main>section:first-of-type>p:first-of-type {
+	font-size: 11px;
+}
+
+.product-pagina main>section:first-of-type>img:first-of-type {
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+	padding-bottom: 4px;
+}
+
+.product-pagina main>section:nth-of-type(1) {
+	font-size: 15px;
+	border-bottom: solid 1px var(--color-decoratie-lijnen);
+}
+
+
+/* Section 2 */
+.product-pagina main>section:nth-of-type(2) {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.product-pagina main>section:nth-of-type(2)>figure img,
+.product-pagina main>section:nth-of-type(2)>figure {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 1em;
+}
+
+.product-pagina main>section:nth-of-type(2)>section {
+	gap: 10px;
+	width: 100%;
+	display: grid;
+	overflow-x: auto;
+	grid-template-columns: repeat(4, 1fr);
+	scroll-snap-type: x mandatory;
+}
+
+.product-pagina main>section:nth-of-type(2)>section>figure {
+	flex-grow: 1;
+	flex-shrink: 0;
+	scroll-snap-align: center;
+}
+
+.product-pagina main>section:nth-of-type(2)>section>figure>img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Section 3 */
+.product-pagina main>section:nth-of-type(3)>h1:first-of-type {
+	text-align: center;
+	margin-top: .5em;
+	font-size: 40px;
+}
+
+.product-pagina main>section:nth-of-type(3)>p:first-of-type {
+	font-size: 25px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	margin-bottom: .8em;
+	border-top: solid .5px var(--color-decoratie-lijnen);
+	border-bottom: solid .5px var(--color-decoratie-lijnen);
+}
+
+/* unorderd list itmes / decoratie */
+.product-pagina main>section:nth-of-type(3)>ul>li {
+	font-size: 15px;
+	margin-left: 1.5em;
+	padding-left: 10px;
+	margin-bottom: .2em;
+	color: var(--color-text);
+}
+
+.product-pagina main>section:nth-of-type(3)>ul {
+	list-style-type: disc;
+	background-color: var(--color-background);
+}
+
+.product-pagina main>section:nth-of-type(3)>p:nth-of-type(3) {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.product-pagina main>section:nth-of-type(3)>p:nth-of-type(4),
+p:nth-of-type(5),
+p:nth-of-type(6) {
+	margin-top: .5em;
+}
+
+/* section 4 */
+.product-pagina main>section:nth-of-type(4)>p:first-of-type {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.product-pagina main>section:nth-of-type(4)>form>select:nth-of-type(1) {
+	padding-top: .7em;
+	padding-left: .7em;
+	padding-right: 3em;
+	margin-bottom: 5em;
+	padding-bottom: .7em;
+}
+
+.product-pagina main>section:nth-of-type(4)>form:nth-of-type(2)>input {
+	margin-bottom: 1em;
+}
+
+.product-pagina main>section:nth-of-type(4)>form:nth-of-type(2) textarea {
+	height: 0;
+	border-width: 0;
+	transition: .3s;
+}
+
+.product-pagina main>section:nth-of-type(4)>form:nth-of-type(2)>input:checked~textarea {
+	height: 8rem;
+	border-width: 1px;
+}
+
+
+/* section 5 */
+
+.product-pagina main>section:nth-of-type(5) {
+	width: 345px;
+	height: 240px;
+}
+
+.product-pagina main>section:nth-of-type(5)>button {
+	left: 0;
+	top: 0;
+	border: none;
+	padding: 1em;
+	margin-bottom: 2em;
+	position: relative;
+	color: var(--color-text-button);
+	background-color: var(--color-background-button);
+}
+
+
+.product-pagina main>section:nth-of-type(5)>button:focus-visible {
+	left: 0;
+	top: 0;
+	width: 228.43px;
+	height: 41.16px;
+	position: relative;
+	animation-duration: 5s;
+	animation-name: leftToRight;
+	transition-timing-function: ease-in-out;
+}
+
+.product-pagina main>section:nth-of-type(5)>button:hover {
+	left: 0;
+	top: 0;
+	width: 228.43px;
+	height: 41.16px;
+	position: relative;
+	animation-duration: 5s;
+	animation-name: leftToRight;
+	transition-timing-function: ease-in-out;
+}
+
+@keyframes leftToRight {
+	from {
+		left: 0px;
+	}
+
+	to {
+		left: 200px;
+	}
+}
+
+
+.product-pagina main>section:nth-of-type(5)>p {
+	font-size: 10px;
+	padding-top: 1em;
+	margin-bottom: 4em;
+	border-top: solid .5px var(--color-decoratie-lijnen);
+}
+
+.product-pagina main>section:nth-of-type(5)>p>i {
+	color: var(--color-text-link)
+}
+
+.product-pagina main>section:nth-of-type(5)>p>i>a:visited {
+	color: var(--color-text-link);
+}
+
+/* section 6 */
+.product-pagina main>section:nth-of-type(6)>h2:nth-of-type(1) {
+	font-size: 35px;
+	padding-top: 1em;
+	border-top: solid .5px var(--color-decoratie-lijnen);
+}
+
+.product-pagina main>section:nth-of-type(6)>p:nth-of-type(1) {
+	font-size: 14px;
+	padding-top: .5em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: .5em;
+	display: inline-block;
+	border-left: solid .5px var(--color-decoratie-lijnen);
+	border-top: solid .5px var(--color-decoratie-lijnen);
+	border-right: solid .5px var(--color-decoratie-lijnen);
+}
+
+
+/* section 7 */
+.product-pagina main>section:nth-of-type(7)>h2:nth-of-type(1) {
+	margin-top: 1em;
+	font-size: 35px;
+	margin-bottom: .7em;
+}
+
+.product-pagina main>section:nth-of-type(7)>article>img:nth-of-type(1) {
+	max-width: 100%;
+}
+
+.product-pagina main>section:nth-of-type(7)>article {
+	gap: 10px;
+	display: flex;
+	margin-bottom: 1em;
+	text-align: center;
+	flex-direction: column;
+	border: solid .2px var(--color-decoratie-lijnen);
+}
+
+.product-pagina main>section:nth-of-type(7)>article>button:nth-of-type(1) {
+	width: 100%;
+	border: none;
+	font-size: 16px;
+	padding-top: 8px;
+	padding-top: .5em;
+	padding-bottom: 8px;
+	padding-bottom: .5em;
+	color: var(--color-text-button);
+	background-color: var(--color-background-button);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* contact pagina begint hier!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.contact main {
+	width: 100%;
+	padding-top: 2em;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+/* section1 */
+.contact main>section:nth-of-type(1)>video {
+	width: 100%;
+
+}
+
+
+.contact main>section:nth-of-type(1)>video:hover {
+	transform: rotate(360deg);
+	transition: 4s;
+}
+
+
+/* section 2 */
+
+.contact main>section:nth-of-type(2)>button {
+	border: none;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border-radius: 20px;
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	background-color: var(--color-text-button);
+	color: var(--color-text-button);
+}
+
+/* section 2 */
+.contact main>section:nth-of-type(2) {
+	margin-top: 1em;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+.contact>main>section:nth-of-type(2)>p {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+/* section 3 */
+.contact>main>section:nth-of-type(3) {
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-bottom: 3em;
+	padding-bottom: 1em;
+	background-color: var(--color-nav);
+}
+
+.contact>main>section:nth-of-type(3)>h2 {
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+	color: var(--color-text-button);
+}
+
+
+.contact>main>section:nth-of-type(3)>form:nth-of-type(1) {
+	display: flex;
+	gap: 5px;
+	flex-direction: column;
+}
+
+.contact>main>section:nth-of-type(3)>form:nth-of-type(1)>input {
+	border: none;
+	padding: 10px;
+	margin-top: .5em;
+	color: var(--color-text-link);
+}
+
+.contact>main>section:nth-of-type(3)>form:nth-of-type(1)>textarea {
+	border: none;
+	padding: 10px;
+	margin-top: .5em;
+	color: var(--color-text-link);
+}
+
+.contact>main>section:nth-of-type(3)>form:nth-of-type(1)>button {
+	border: none;
+	width: 100%;
+	font-size: 16px;
+	padding-top: 8px;
+	padding-top: .5em;
+	padding-bottom: 8px;
+	padding-bottom: .5em;
+	color: var(--color-text-button);
+	background-color: var(--color-text-topbar);
+}
+
+
+
+
+
+
+
+/* Verzenden pagina begint hier!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.verzenden main {
+	width: 100%;
+	padding-top: 2em;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+/* section 1 */
+.verzenden>main>section:nth-of-type(1) {
+	padding-top: 1em;
+	padding-left: 1em;
+	margin-bottom: 3em;
+	padding-right: 1em;
+	padding-bottom: 1em;
+}
+
+.verzenden>main>section:nth-of-type(1)>h1 {
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+	color: var(--color-text);
+}
+
+.verzenden>main>section:nth-of-type(1)>img {
+	width: 100%;
+	height: 100%;
+}
+
+.verzenden>main>section:nth-of-type(1)>p {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.verzenden>main>section:nth-of-type(2)>button {
+	padding: 1em;
+	border: none;
+	margin-left: 8em;
+	margin-bottom: 2em;
+	background-color: var(--color-background-button);
+}
+
+
+
+
+/* Test pagina begint hier!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.test .object {
+	width:220px;
+	height: 100px;
+	margin-bottom: 1em;
+	border: solid 5px black;
+}
+
+.test .block {
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 90px;
+	position: relative;
+	margin-bottom: 1em;
+	animation-duration: 2s;
+	background-color: blue;
+	border: solid 1px red;
+	animation-name: leftToRight;
+}
+
+/* footer */
+footer {
+	width: 100%;
+	padding-top: 1.5em;
+	padding-bottom: 3em;
+	background-color: var(--color-nav);
+}
+
+footer>section {
+	margin-top: 2em;
+	margin-left: 2em;
+}
+
+footer>section>ul>li {
+	margin-bottom: 5px;
+	list-style-type: none;
+	color: var(--color-text-footer);
+}
+
+footer>section>h2 {
+	width: 100%;
+	margin-bottom: 1em;
+	color: var(--color-text-footer);
+}
+
+footer>section>p {
+	margin-top: 1em;
+	font-size: 10px;
+}
