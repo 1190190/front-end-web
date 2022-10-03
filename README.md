@@ -142,7 +142,7 @@ Diaz Cabrera                                                                    
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - Ik heb te horen gekregen dat er oefeningen gaan komen waar we hier op gaan verdiepen. Deze zal ik dan zeer zeker ook doen. Ik heb ook verschillende artikelen toegestuurt gekregen om mijzelf alvast hierop in te lezen. LINK HIER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!()()()()()()()()!!!!!!!!!!!!!!!!!!!
+  - Ik heb te horen gekregen dat er oefeningen gaan komen waar we hier op gaan verdiepen. Deze zal ik dan zeer zeker ook doen. Ik heb ook verschillende artikelen toegestuurt gekregen om mijzelf alvast hierop in te lezen. https://www.tutorialrepublic.com/css-tutorial/css-links.php.
   -  Buttons hover en andere states blijken we later in de weken dieper op in te gaan. Ik heb zelf het hef in handen genomen om mijzelf hier op in te lezen. Achteraf bijkt dit niet heel lastig te zijn, maar je moet het wel even begrijpen. 
   - Verschillende manieren van het ordenenen zijn er zeker, het is an mij hoe ik dit wil gaan doen. Voor nu wil ik dit met comments gaan doen. Zo kan ik snel en overzchtelijk zien wel sections waar staan in mijn css. Ook is dit makkelijk terug te vinden aan de hand van (comand f een zoekfunctie binnen je document).
   - Mij is vertelt dat dit niet raar is, echter is er een mogelijkheid om deze sections te optimaliseren maar dan zal ik de slectors binnen bij css opnieuw moeten aansprekn. Ook zullen de selector lijnen groter worden en zo minder overzichtelijk. 
