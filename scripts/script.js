@@ -10,7 +10,7 @@ var bigImage = document.querySelector(".product-pagina main>section:nth-of-type(
 var carouselImages = document.querySelectorAll('.product-pagina main>section:nth-of-type(2) > section img');
 
 // audio button variabelen
-var audioThanks = new Audio('audio/thank-you.mp3')
+var audioThanks = new Audio('./audio/thank-you.mp3')
 var audiobutton = document.querySelector('.audio')
 
 // Toggle Menu
